@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // AppServiceProvider.php
+        $this->app->singleton(FakerGenerator::class, function () {
+            return FakerFactory::create('id_ID');
+        });
     }
 }
